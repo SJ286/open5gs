@@ -25,6 +25,9 @@
 #include "mme-event.h"
 #include "mme-timer.h"
 #include "mme-sm.h"
+#include <unistd.h>
+
+extern ded_cnt;
 
 int nas_eps_send_to_enb(mme_ue_t *mme_ue, ogs_pkbuf_t *pkbuf)
 {
@@ -374,6 +377,13 @@ int nas_eps_send_activate_dedicated_bearer_context_request(
     ogs_pkbuf_t *s1apbuf = NULL;
     ogs_pkbuf_t *esmbuf = NULL;
     mme_ue_t *mme_ue = NULL;
+
+    //increment dedicated bearer count
+    ded_cnt+=1;
+
+    if (ded_cnt % 2 == 0){
+        sleep(1);
+    }
 
     ogs_assert(bearer);
     mme_ue = bearer->mme_ue;

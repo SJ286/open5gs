@@ -34,6 +34,7 @@ static ogs_thread_t *thread;
 static void mme_main(void *data);
 
 static int initialized = 0;
+int ded_cnt=0;
 
 int mme_initialize()
 {
