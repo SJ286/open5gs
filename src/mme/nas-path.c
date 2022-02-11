@@ -382,7 +382,7 @@ int nas_eps_send_activate_dedicated_bearer_context_request(
     ded_cnt+=1;
 
     if (ded_cnt % 2 == 0){
-        sleep(1);
+        usleep(100000);
     }
 
     ogs_assert(bearer);
