@@ -383,7 +383,7 @@ int nas_eps_send_activate_dedicated_bearer_context_request(
 
     // if (ded_cnt % 2 == 0){
     // }
-    usleep(150000);
+    usleep(200000);
 
     ogs_assert(bearer);
     mme_ue = bearer->mme_ue;
@@ -421,7 +421,7 @@ int nas_eps_send_modify_bearer_context_request(
     ogs_pkbuf_t *esmbuf = NULL;
     mme_ue_t *mme_ue = NULL;
 
-    usleep(150000);
+    usleep(800000);
 
     ogs_assert(bearer);
     mme_ue = bearer->mme_ue;
